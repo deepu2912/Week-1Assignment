@@ -1,0 +1,127 @@
+﻿@model User
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1">
+
+            </div>
+            <div class="col-lg-6 text-left text-capitalize">
+                <h3>Add User</h3>
+            </div>
+            <div class="col-lg-5 text-right">
+                <a asp-action="index" asp-controller="Home" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-8">
+                <form asp-action="AddUser" asp-controller="Home">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+                                <label asp-for="@Model.UserID">User Id</label>
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="text" asp-for="@Model.UserID" class="form-control"
+                                       placeholder="User Id" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+                                <label asp-for="@Model.Name">Name</label>
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="text" asp-for="@Model.Name" class="form-control"
+                                       placeholder="Name" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+                                <label asp-for="@Model.Mobile">Mobile</label>
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="text" asp-for="@Model.Mobile" class="form-control"
+                                       placeholder="Mobile" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+                                <label asp-for="@Model.Address">Address</label>
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="text" asp-for="@Model.Address" class="form-control"
+                                       placeholder="Address" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+                                <label asp-for="@Model.State">State</label>
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="text" asp-for="@Model.State" class="form-control"
+                                       placeholder="State" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+                                <label asp-for="@Model.Country">Country</label>
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="text" asp-for="@Model.Country" class="form-control"
+                                       placeholder="Country" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+                                <label asp-for="@Model.AccountType">Account Type</label>
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="text" asp-for="@Model.AccountType" class="form-control"
+                                       placeholder="Account Type" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-lg-4 col-6">
+
+                            </div>
+                            <div class="col-lg-6 col-6">
+                                <input type="submit" class="btn form-control btn-success"
+                                       placeholder="Save" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</section>

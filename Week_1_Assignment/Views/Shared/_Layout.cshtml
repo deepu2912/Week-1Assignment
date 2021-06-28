@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="bg-dark text-white p-2">
+        <span class="navbar-brand ml-2">ABC Bank</span>
+    </div>
+    @RenderBody()
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.LoanCalculator input').keypress(function (event) {
+                return isNumber(event, this)
+            });
+        });
+
+        $('#Calculate').click(function (e) {
+            Calculate(); 
+        })
+
+            function Calculate() {
+
+                var Amount = $('#Amount').val();
+                var InterestRate = $('#InterestRate').val();
+                var MonthstoPay = $('#MonthstoPay').val();
+                debugger;
+                if (Amount == '') {
+                    $('#Msg').html("Please Enter Amount");
+                } else if (InterestRate == '') {
+                    $('#Msg').html("Please Enter Interest Rate");
+                }
+                else if (MonthstoPay == '') {
+                    $('#Msg').html("Please Enter Months to Pay");
+                } else {
+
+                    // Extracting value in the amount 
+                    // section in the variable
+                    const amount = document.querySelector("#Amount").value;
+
+                    // Extracting value in the interest
+                    // rate section in the variable
+                    const rate = document.querySelector("#InterestRate").value;
+
+                    // Extracting value in the months 
+                    // section in the variable
+                    const months = document.querySelector("#MonthstoPay").value;
+
+                    // Calculating interest per month
+                    const interest = (amount * (rate * 0.01)) / months;
+
+                    // Calculating total payment
+                    const total = ((amount / months) + interest).toFixed(2);
+
+                    document.querySelector("#Msg")
+                        .innerHTML = "EMI : (₹)" + total;
+                }
+            }  
+
+        // THE SCRIPT THAT CHECKS IF THE KEY PRESSED IS A NUMERIC OR DECIMAL VALUE.
+        function isNumber(evt, element) {
+
+            var charCode = (evt.which) ? evt.which : event.keyCode
+
+            if (
+                (charCode != 45 || $(element).val().indexOf('-') != -1) &&      // “-” CHECK MINUS, AND ONLY ONE.
+                (charCode != 46 || $(element).val().indexOf('.') != -1) &&      // “.” CHECK DOT, AND ONLY ONE.
+                (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

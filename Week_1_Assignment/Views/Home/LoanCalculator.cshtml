@@ -1,0 +1,78 @@
+﻿<section class="LoanCalculator">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-1">
+
+            </div>
+            <div class="col-lg-6 text-left text-capitalize">
+                <h3>Loan Calculator</h3>
+            </div>
+            <div class="col-lg-5 text-right">
+                <a asp-action="index" asp-controller="Home" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+
+        </div>
+       
+            <div class="col-8 mt-2 p-2" style=" border: 1px solid blue; height:auto;">
+               
+                    <div class="container">
+                        <div class="row text-center">
+                            <div class="col-12 text-center"> <h3>Loan Calculator</h3></div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="Amount">Amount(Rs.)</label>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <input type="text"  onchange="Calculate()" id="Amount" placeholder="Amount" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="InterestRate">Interest Rate(in %)</label>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <input type="text"  onchange="Calculate()" id="InterestRate" placeholder="Interest Rate" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label for="MonthstoPay">Months to Pay(in months)</label>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <input type="text"  onchange="Calculate()" id="MonthstoPay" placeholder="Months to Pay" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label id="Msg"></label>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <input type="button" id="Calculate" value="Calculate" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+               
+            </div>
+        
+        <div class="col-2">
+
+        </div>
+    </div>
+</section>

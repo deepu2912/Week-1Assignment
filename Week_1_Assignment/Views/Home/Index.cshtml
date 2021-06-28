@@ -1,0 +1,66 @@
+﻿@model IEnumerable<User>
+
+<section>
+    <div class="row">
+        <div class="col-lg-1">
+
+        </div>
+        <div class="col-lg-6 text-center text-capitalize">
+            <h3>Users</h3>
+        </div>
+        <div class="col-lg-5 text-right">
+            <a asp-action="AddUser" asp-controller="Home" class="btn btn-secondary">Add User</a>
+            <a asp-action="LoanCalculator" asp-controller="Home" class="btn btn-outline-secondary ">Loan Calculator</a>
+        </div>
+    </div>
+    <div class="table-responsive-lg">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Action
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Mobile No
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        State
+                    </th>
+                    <th>
+                        Country
+                    </th>
+                    <th>
+                        Account Type
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-controller="home" asp-action="Delete" asp-route-Id="@p.UserID" class="active btn btn-primary">Delete</a>
+                            <a asp-controller="home" asp-action="Update" asp-route-Id="@p.UserID" class="active btn btn-primary">Update</a>
+                        </td>
+                        <td>@p.UserID</td>
+                        <td>@p.Name</td>
+                        <td>@p.Mobile</td>
+                        <td>@p.Address</td>
+                        <td>@p.State</td>
+                        <td>@p.Country</td>
+                        <td>@p.AccountType</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
